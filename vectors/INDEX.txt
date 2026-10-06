@@ -1,0 +1,13 @@
+KDF-1 v1.0 public conformance files
+All secrets/passwords in these fixtures are deliberately public and unusable
+as private credentials. Original paths are retained for audited build/tests.
+
+../public-vectors.json                  classic full KDF vector
+../reference/test_vectors.json          Python/reference classic vector
+../developer/public-cases.json          additional established public KDF cases
+../human-vectors.json                   HRC-1 encoding/checksum vectors
+../master-phrase-vectors.json           15 valid and 16 invalid input fixtures
+../master-phrase-repertoire.json        mirror of SPEC Appendix MP
+
+The frozen specification is ../SPEC.txt (including HRC-1 and Appendix MP).
+No copies are moved or rewritten for directory appearance.

@@ -1,0 +1,16 @@
+Pinned vendor: hash-wasm 4.12.0, MIT license.
+Upstream: https://github.com/Daninet/hash-wasm
+Registry metadata: https://registry.npmjs.org/hash-wasm/4.12.0
+Archive: https://registry.npmjs.org/hash-wasm/-/hash-wasm-4.12.0.tgz
+Registry sha512 integrity verified against downloaded bytes (see metadata JSON).
+Archive SHA256: 1db32a125fb46177932ec8ac438d3cd8214ebdfaccb5d6611b657d88eb586f92
+
+Runtime uses exact dist/argon2.umd.min.js from that archive (no minifier rewrite).
+It contains two WASM modules. Exact extracted bytes also saved here:
+argon2.wasm SHA256 83b5829d20b4312aca1a56819f95eef20492e058c70f282c9ed6929f579b20ed
+blake2b.wasm SHA256 b478c0d889d97d7a8db4d10501457ad78dd406d02dcb4c892c0d844805ef05bb
+Readable lib/ TypeScript and src/ C are saved; original archive includes packaging
+and build sources. The npm archive has no separate wasm/ source directory; runtime
+WASM bytes are embedded in dist. They were extracted byte-for-byte, not rebuilt.
+No claim that this candidate independently audited/reproduced the vendor build.
+No dependency needed at runtime beyond a compatible local browser.

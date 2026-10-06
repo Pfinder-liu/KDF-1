@@ -1,0 +1,35 @@
+KDF-1 v1.0 FROZEN
+Freeze date: 2026-10-07
+
+The owner accepts the final Freeze Audit recommendation and freezes the
+audited KDF-1 candidate as KDF-1 v1.0. No normative or executable bytes have
+been changed to perform this freeze. FROZEN is the release status.
+
+The specification and public reference vectors define KDF-1 v1.0.
+SPEC.txt contains both KDF-1 and HRC-1. Its Appendix MP defines the fixed
+Unicode 13.0 repertoire. The JSON repertoire is a machine-readable mirror.
+Root JSON vectors, reference/test_vectors.json and developer/public-cases.json
+are authoritative public conformance examples. vectors/INDEX.txt indexes them.
+RECOVER.html is the KDF-1 v1.0 Reference Recovery Calculator, not the protocol.
+
+Existing candidate / NOT FROZEN labels inside the preserved SPEC, calculator,
+reference CLI, vectors and historical reports describe their pre-freeze state.
+THIS DECLARATION SUPERSEDES ONLY THOSE ADMINISTRATIVE STATUS LABELS.
+It changes no protocol rule, accepted input, normalization or expected output.
+KDF-1-v1 domain strings remain unchanged; v1.0 is the frozen release name.
+The original byte streams remain intact to avoid rebuilding audited artifacts.
+
+Any change affecting legal inputs, normalization, Recovery Secret, HRC-1,
+checksum, KDF parameters, context serialization, password stream, alphabet,
+rejection sampling or final passwords requires a new protocol/version.
+It MUST NOT be published as a replacement KDF-1 v1.0.
+Do not move or overwrite the v1.0 tag or replace its release assets.
+Any discovered serious compatibility/security blocker must be evaluated
+separately, disclosed appropriately and handled under a new version if needed.
+
+The previous candidate snapshot is identified by docs/AUDITED-SNAPSHOT.json.
+All files in that snapshot except README.md, START_HERE.txt and INTEGRITY.json
+are byte-for-byte preserved here. The first two are publication guidance;
+the directory inventory is regenerated to cover the final package.
+SHA256SUMS.txt and INTEGRITY.json detect corruption/accidental changes;
+neither is a digital signature or proof against malicious replacement.

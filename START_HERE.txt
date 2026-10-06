@@ -1,0 +1,24 @@
+KDF-1 v1.0 FROZEN — 离线恢复
+Intel Mac / M 系列 Mac / Windows / Linux 使用同一份 RECOVER.html。
+实际验证范围见 docs/COMPATIBILITY.md；未测试不等于已通过。
+
+1. 找一台合理可信的电脑，建议断网。
+2. 解开保存的 Recovery Kit，双击 RECOVER.html，用现代浏览器打开。
+   如果不是浏览器，使用“打开方式”选择 Safari / Chrome / Edge / Firefox。
+3. 等待 SELF TEST PASS。看到 STOP、无法打开或没有 PASS：不要输入秘密。
+   按 STOP 原因取得可信文件或兼容浏览器；不要安装开发环境或绕过保护。
+   首次建立：展开 Create NEW Recovery Code，生成后抄写/打印/自行保存。
+   新码不能找回用其他码建立的密码；页面不会自动保存。
+   可选 Travel QR → 保存只有二维码的 PNG；打印时关闭页眉/页脚。QR 不是加密。
+4. 从纸上手输 Recovery Code；或用系统相机扫描 QR，复制码后粘贴到明文框。
+   在隐藏框输入脑中的 Master Phrase；可主动 Show/Hide 核对，大小写和空格重要；禁止换行。
+   不在 v1 固定字符范围内的输入会拒绝；不要自行删除或替换字符来猜密码。
+5. 填保存的 label、account 别名、revision、密码长度，点击“恢复密码”。
+   默认：account 空白，revision 1，长度 24。遗失的记录不能靠猜测。
+6. 校验失败请重新核对纸张。使用显示的密码，完成后关闭页面。
+
+Master Phrase 不写在恢复纸上。长期保存 SPEC.txt 和公开 vectors。
+外地也要能取得计算器副本和记录；只有纸不能凭空给空白电脑提供软件。
+使用前按 HUMAN-DRILL.txt 做第二台电脑、断网、禁止复制粘贴的演练。
+本地校验发现损坏，不能认证被恶意整体替换的文件。SHA256SUMS.txt 检查损坏/意外变化，不是数字签名。
+计算器内 candidate 字样是保留的历史标签；冻结状态以 FREEZE.txt 为准。

@@ -1,0 +1,2 @@
+# Runtime dependency; algorithm parameters are explicitly fixed in kdf.py.
+argon2-cffi==25.1.0

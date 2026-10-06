@@ -1,0 +1,26 @@
+# Machine/editor/cache files
+.DS_Store
+._*
+Thumbs.db
+.idea/
+.vscode/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+node_modules/
+.npm/
+# Local work and intentionally private materials: never use these for authority
+/work/
+/scratch/
+/private/
+/local-tests/
+/.env
+/.env.*
+/card.png
+/personal-recovery*.txt
+/personal-recovery*.png
+# Upload these separately as GitHub Release assets, not source commits
+/release/*.zip
+/release/SHA256SUMS.txt

@@ -1,0 +1,9 @@
+Official Unicode 13.0.0 UCD archive:
+https://www.unicode.org/Public/zipped/13.0.0/UCD.zip
+Archive SHA256: 2f76973b4d36ae45584f5a45ec65b47138932d777dd23a5669c89535ef3da951
+Selected official data preserved verbatim; not a browser/runtime dependency.
+Repertoire derived from UnicodeData.txt records, expanding First/Last ranges,
+excluding surrogates and CR/LF. No host-version-dependent membership checks.
+UnicodeData.txt SHA256: bdbffbbfc8ad4d3a6d01b5891510458f3d36f7170422af4ea2bed3211a73e8bb
+NormalizationTest.txt SHA256: d60ee55dd9169444652e48d337109cc814ecc59a9d3122eedddf7de388f2e01d
+ReadMe.txt SHA256: 953c06b1383b4d33453cd235dc1127d9109f7eca3996dfd847f261819b4d6c3d

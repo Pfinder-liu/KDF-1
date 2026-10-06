@@ -1,0 +1,210 @@
+A1/A2 repair — 2026-10-07 — CANDIDATE / NOT FROZEN
+Current validation: 113/113 tests/groups PASS. Complete scope, input contract,
+Unicode13/17 comparisons, 18853-row official NFC conformance, raw CR/LF browser
+paste evidence, failures/root causes and freeze re-audit: FREEZE_REAUDIT.txt.
+Original outputs unchanged. Recommendation YES does not apply frozen status.
+
+Historical validation follows (historical counts refer to their own versions):
+
+Anonymous Travel QR increment — 2026-10-07
+CANDIDATE / NOT FROZEN
+
+97/97 automated tests/groups PASS:
+40 reference Python (including original 26), 17 legacy regression, 10 HTML
+artifact/integrity/CSP, 13 Web conformance groups, 10 UX groups, 7 QR groups.
+Includes nine saved cross-implementation vectors and 3310 invalid-input cases.
+Existing tests retained. Added two UX groups for same-secret/no new randomness,
+QR readiness/busy/STOP/stale clear and zero network API calls; seven independent
+QR groups cover exact text/metadata absence, public-vector+32 fixed-code decode,
+16-byte equality, H/quiet-zone/black-white, deterministic encoding, invalid-input
+rejection, same original three KDF outputs, no scanner/network in runtime.
+Existing HTML artifact tests expanded for the two embedded QR scripts and gating.
+All logs/files use public data; transient CSPRNG samples in preexisting UX tests
+are never logged or persisted. No real user phrase/secret was requested or used.
+
+Encoder: official Nayuki QR Code generator v1.8.0, MIT, pinned source.
+TypeScript 5.7.3 transpiled to ES2017 JavaScript, comments/license preserved.
+No compiler/install/server/network at runtime. Independent jsQR 1.4.0 decoder
+is developer-only and absent from RECOVER.html; npm archive SHA512 verified.
+Public payload (exact, no prefix/newline):
+22222-5R62B-SAJ4K-C8JSR-74S7N-S2FAH-G5
+QR Model 2, alphanumeric, H correction, version 4 (33x33), quiet zone 4 modules,
+12 pixels/module, opaque 492x492 PNG. Print size 45mm including quiet zone.
+
+Browser checks: local file public-only fixture with RNG fixed to bytes 00..0f,
+clearly titled PUBLIC QR TEST ONLY, not shipped in kit. Chrome154/Safari27 on
+Apple Silicon both SELF TEST PASS and same QR flow. Chrome exported actual PNG
+independently decoded to exact payload; PNG has no text/EXIF chunks. Chrome print
+preview is exactly one page with only QR once browser headers/footers disabled.
+Physical paper/phone scan remains an unperformed human test (HUMAN-DRILL.txt).
+No new Intel/Windows/Linux hardware test; prior Intel/ARM64 equality user-reported.
+
+Runtime contains no connection/camera/scanner/upload/storage APIs; network traps
+count zero in UX/QR tests and CSP connect-src/default-src 'none' forbids requests.
+Local Blob URL is only for download, not a network destination. Development-only
+vendor downloads came from official GitHub/npm sources; not a runtime dependency.
+This is not OS-wide network traffic monitoring of browsers/extensions.
+
+Failures encountered and resolved: Node24 exposes global.crypto as a read-only
+getter. Initial new QR test incorrectly assigned it; fixed to assign only when
+absent. Full validation rerun passed. No build failures remain.
+
+Changed: RECOVER.html; developer/build_web.py, ui.js, test_ux.js,
+test_web_artifact.py, validate_web.py; README.md, START_HERE.txt, SPEC.txt,
+HUMAN-DRILL.txt, COMPATIBILITY.txt, VALIDATION.txt, INTEGRITY.json, candidate ZIP.
+Added: developer/travel_qr.js, test_qr.js, vendor/qr/{qrcodegen.ts,qrcodegen.js,
+PROVENANCE.txt,jsQR.js,jsQR-LICENSE.txt,jsqr-1.4.0.tgz,jsqr-metadata.json},
+Travel-QR-PUBLIC-EXAMPLE.png. Compiler/browser test fixtures remain in work/.
+UNCHANGED: core.js, reference implementation, Human encoding/checksum,
+public-vectors.json, human-vectors.json, all existing reference outputs.
+Original expected password remains HtO+f3SK@_5w*VwW6ufM@UzA, with exact original
+master_key_hex and site_key_hex. No cryptographic or secret-format revision.
+
+Historical validation evidence follows:
+
+UX INCREMENT — 2026-10-07 — CANDIDATE / NOT FROZEN
+
+Current result: 88/88 tests/test groups PASS (67 Python + 13 Web adapter + 8 UX).
+This is an increment over the 80-test baseline recorded below.
+Create NEW Recovery Code is separate from recovery and carries the explicit
+warning that new codes cannot recover passwords made with a different code.
+It uses crypto.getRandomValues(new Uint8Array(16)) and the UNCHANGED KDF1.encode.
+No Math.random or fallback, hex display, auto-save or form replacement was added.
+Show/Hide changes only phrase input type; no paste blocker or normalization change.
+Recovery Code remains visible and all existing early validation rules remain.
+Printing excludes recovery fields/output so a shown phrase is not on the new-code
+paper. Generated code can be selected, manually saved, transcribed or printed.
+
+Added 8 UX tests:
+1. CSPRNG called with exactly 16 bytes; public mocked roundtrip; buffer cleared.
+2. Eight actual transient Web Crypto samples distinct/checksum-valid/decoder-compatible;
+   Math.random poisoned; no sample values printed or persisted.
+3. Show/Hide default hidden and exact value preserved (Unicode/spaces/case).
+4. Show/Hide keeps public KDF output identical; clearing restores hidden.
+5. New code creation leaves old recovery fields and existing password untouched.
+6. CSPRNG failure STOPs and disables controls; no weak fallback.
+7. Failed startup disables Create NEW and Show/Hide.
+8. New actions plus public derivation call zero network APIs in instrumented tests.
+Artifact tests also enforce that both new controls start disabled.
+
+Chrome 154.0.8037.98 and Safari 27.0 on Apple Silicon macOS 26.7.1:
+final file:// self-test PASS; Show -> Hide keeps public phrase and derives exact
+HtO+f3SK@_5w*VwW6ufM@UzA; independent create warning/button inspected in Chrome.
+No actual user Master Phrase or existing Recovery Secret was used. Actual CSPRNG
+samples were only ephemeral developer-test values, never recorded in this report.
+Page source contains no networking/storage calls; CSP retains connect-src 'none'.
+Network API instrumentation count: 0. This is page-code evidence, not a claim about
+unrelated browser tabs/telemetry or a new physical-disconnection human drill.
+User reports prior Web self-test PASS on Intel Mac; exact browser version unknown.
+This UX revision was not independently tested on Intel/Windows/Linux hardware.
+
+Unchanged byte-for-byte against prior saved kit: developer/core.js, public-vectors,
+human-vectors; no Argon2/salt/HMAC/context/alphabet/sampling/metadata/encoding change.
+All original master_key/site_key/password vectors and nine public cases PASS.
+
+Changed files:
+RECOVER.html (regenerated), INTEGRITY.json (regenerated), developer/ui.js,
+developer/build_web.py, developer/test_web_artifact.py, developer/validate_web.py,
+new developer/test_ux.js, SPEC.txt, START_HERE.txt, README.md, COMPATIBILITY.txt,
+VALIDATION.txt; packaged ZIP updated. No cryptographic core or vendor file changed.
+
+--- Previous local Web baseline evidence follows ---
+
+KDF-1 LOCAL WEB REFACTOR — 2026-10-07, Asia/Shanghai
+CANDIDATE / NOT FROZEN
+
+Objective: one identical local browser file on Intel/M-series Mac, Windows, Linux.
+The previous Intel Mac "unsupported application" result is UX TEST FAILED.
+Native ARM64 app is historical optional material, excluded from this primary kit.
+No site deployed. No native cross-platform packaging system added.
+
+Inspected/inherited: prior SPEC, Python KDF, all old tests, public vectors, HRC-1,
+START_HERE/Recovery Sheet, native Calculator and validation artifacts.
+Unchanged: KDF-1 v1 Argon2id parameters/prefixes, SHA/HMAC contexts, NFC/label rules,
+rejection-sampling alphabet/stream; HRC-1 30+2 radix-24 code and checksum.
+Core Python reference and original tests retained. New JS is an adapter over
+mature Web Crypto/hash-wasm, not a handwritten cryptographic primitive.
+
+Pre-UX baseline Web kit tests:
+26 original KDF + 14 HRC + 17 legacy-kit + 10 Web artifact = 67 Python tests PASS.
+13 Node/Web adapter test groups PASS (80 tests/groups total).
+Previous native snapshot's 11 recovery-gate tests also rerun PASS separately;
+all prior 68 test cases remain preserved across current/history snapshots.
+No current Web acceptance depends on the native binary's architecture.
+
+Cross implementation/public evidence:
+- Original vector exact master key:
+  d926cadd0ae78d32398709deebcb1ba4e74e8991a973f06d5cef6e3a63dde787
+- Original vector exact site key:
+  60beb81f4da1e9a96b9f78d26df78ab2203c7a0b702912c22a72268de10a7930
+- Original vector exact password: HtO+f3SK@_5w*VwW6ufM@UzA
+- Nine public cases compare all three fields, including NFC decomposed/composed,
+  case/spaces, full-width distinction, max revision and length, label/account rules.
+- Browser/Node runs 3310 rejection cases: all symbol substitutions on four public
+  code vectors, adjacent unequal swaps, insertion/deletion, forbidden symbols,
+  checksum-correct overflow and invalid metadata. Invalid code never invokes Argon2.
+- Additional Node tests: 256 deterministic public roundtrips, unpaired-surrogate
+  rejection, integer grammar/bounds, wrong expected fields/scheme and empty vectors.
+- Python retains original 26 compatibility tests and all earlier HRC regressions.
+- Artifact tests check exact CSP script/style hashes, embedded payload hashes,
+  fixed vector data, initially disabled secrets, no source/network/storage loading,
+  reproducible assembly, vendor registry integrity, archived exact WASM and no app.
+
+Actual browser evidence (see COMPATIBILITY.txt):
+Apple Silicon macOS 26.7.1; Chrome 154.0.8037.98 and Safari 27.0.
+Both directly opened file://, startup SELF TEST PASS, exact UI public recovery,
+all nine cross-implementation cases, bad-code UI and negative CSP fixtures PASS.
+Script/vector/style damage -> STOP with disabled secrets.
+Removed WASM compilation permission -> STOP.
+PUBLIC developer connection probe -> connect-src violation/blocking.
+Fatal-stop latch prevents late async completion from re-enabling inputs.
+Final portability/package checks:
+- Only RECOVER.html copied to an otherwise empty directory containing spaces;
+  final Chrome/Safari file:// startup and exact public UI recovery both PASS.
+- Compressed kit unpacked and all 92 saved inventory files matched SHA256.
+- Runtime HTML is 54054 bytes; archive includes source/spec/vector material.
+- Current Python reference/test_kdf/public-vectors are byte-identical to the
+  previous snapshot, confirming no silent reference/core/test rewrite.
+
+Remaining formal acceptance:
+Intel Mac Safari/Chrome: UNTESTED (no physical Intel device available).
+Windows Edge/Chrome, Linux Firefox/Chrome: UNTESTED (no hosts available).
+Physical disconnection and second-computer printed-paper/no-paste drill: UNTESTED.
+RTO <=30 minutes / <=same day is a target, not a measured human result.
+Do not equate Node or Apple Silicon results with those external devices.
+
+Build/verification failures recorded with root cause:
+1. Initial dependency download under restricted shell failed DNS resolution:
+   URLError / [Errno 8] nodename nor servname provided, or not known.
+   Retried through permitted network access; pinned npm archive obtained and its
+   registry SHA512 integrity verified. No network in final build/runtime.
+2. Upstream npm archive has no separate wasm/ directory. Copy reported "No such
+   file or directory". Exact Argon2/BLAKE2 WASM bytes were instead extracted from
+   original minified distribution and saved with source/archive/license/provenance.
+3. Initial Node developer harness attempted to assign getter-only global crypto
+   in Node 24.19.0: TypeError. Harness now uses available Web Crypto and only sets
+   a fallback if absent; final tests PASS. Runtime browser code was unaffected.
+4. Chrome structured browser binding was unavailable to this session; actual
+   Chrome native UI was used for file:// acceptance. No simulated browser PASS.
+Previous native compile and sandbox failures remain in the old validation report;
+no such tool/sandbox is required for the new recovery path.
+Build/test/probe scripts report failing commands/exceptions with root cause.
+
+Integrity/security boundaries:
+Embedded payload SHA256 and hash CSP detect accidental corruption; replacing the
+whole file/CSP/hashes is not prevented or authenticated. Local browser/host and
+vendor supply chain remain trusted. hash-wasm MIT 4.12.0 pinned/archived; no claimed
+independent vendor audit. Web Crypto and WASM are existing mature implementations.
+No mutable-array clearing guarantee extends to JS strings/vendor/browser memory,
+OS swap, extensions, crash dumps or compromised machines. Page has no storage,
+network, account, clipboard or service-worker functionality. Browser may offer
+password-manager auto-fill independently of the page's autocomplete=off request.
+CSP connection denial is not a physical/OS-wide air gap.
+
+Simplification delivered:
+START_HERE.txt -> RECOVER.html -> SELF TEST PASS -> paper + remembered phrase and
+saved metadata -> password -> close tab. One file, no CPU-specific main entrance.
+Native app, manual SHA256, directory copying, wheel/pip/venv/runtime installers,
+rehearsal/sandbox concepts removed from primary recovery. Old scripts retained
+only for developer regression/history; the HTML does not invoke any of them.
+Long-term authority remains SPEC + fixed public vectors; Python is a reference.

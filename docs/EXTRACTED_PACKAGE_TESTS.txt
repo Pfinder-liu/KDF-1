@@ -1,0 +1,144 @@
+test_adjacent_transpositions_public_vectors (test_human_code.HumanCodeTests) ... ok
+test_all_public_vectors (test_human_code.HumanCodeTests) ... ok
+test_bad_secret (test_human_code.HumanCodeTests) ... ok
+test_capacity (test_human_code.HumanCodeTests) ... ok
+test_deterministic_roundtrips (test_human_code.HumanCodeTests) ... ok
+test_every_single_symbol_substitution (test_human_code.HumanCodeTests) ... ok
+test_fail_before_argon (test_human_code.HumanCodeTests) ... ok
+test_fixed_public_vector (test_human_code.HumanCodeTests) ... ok
+test_missing_and_extra_symbols (test_human_code.HumanCodeTests) ... ok
+test_no_fuzzy_or_unicode (test_human_code.HumanCodeTests) ... ok
+test_noncanonical_checksum (test_human_code.HumanCodeTests) ... ok
+test_normalization (test_human_code.HumanCodeTests) ... ok
+test_overflow_with_correct_checksum (test_human_code.HumanCodeTests) ... ok
+test_unchanged_kdf_outputs (test_human_code.HumanCodeTests) ... ok
+test_account_case_and_empty_account (test_kdf.DerivationTests) ... ok
+test_api_canonicalization (test_kdf.DerivationTests) ... ok
+test_bad_master_inputs (test_kdf.DerivationTests) ... ok
+test_counter_blocks (test_kdf.DerivationTests) ... ok
+test_delimiter_collision_rejected (test_kdf.DerivationTests) ... ok
+test_historical_independent_user_results (test_kdf.DerivationTests) ... ok
+test_key_lengths (test_kdf.DerivationTests) ... ok
+test_label_bounds (test_kdf.DerivationTests) ... ok
+test_length_bounds_prefix_and_alphabet (test_kdf.DerivationTests) ... ok
+test_master_phrase_case_and_whitespace_significant (test_kdf.DerivationTests) ... ok
+test_master_phrase_nfc (test_kdf.DerivationTests) ... ok
+test_metadata_rejected_before_argon2 (test_kdf.DerivationTests) ... ok
+test_no_domain_aliasing (test_kdf.DerivationTests) ... ok
+test_recovery_hex (test_kdf.DerivationTests) ... ok
+test_reference_and_determinism (test_kdf.DerivationTests) ... ok
+test_rejection_sampling_boundary (test_kdf.DerivationTests) ... ok
+test_revision_bounds_and_types (test_kdf.DerivationTests) ... ok
+test_cli_and_api_agree (test_kdf.SelfTestAndCLITests) ... ok
+test_cli_invalid_input_no_password (test_kdf.SelfTestAndCLITests) ... ok
+test_cli_numeric_grammar (test_kdf.SelfTestAndCLITests) ... ok
+test_corrupt_each_expected_field_and_null (test_kdf.SelfTestAndCLITests) ... ok
+test_hidden_input_unavailable (test_kdf.SelfTestAndCLITests) ... ok
+test_missing_malformed_wrong_scheme (test_kdf.SelfTestAndCLITests) ... ok
+test_self_test_pass (test_kdf.SelfTestAndCLITests) ... ok
+test_subprocess_corrupt_vector_exits_one (test_kdf.SelfTestAndCLITests) ... ok
+test_subprocess_self_test_and_path_resolution (test_kdf.SelfTestAndCLITests) ... ok
+test_cr_lf_all_positions_rejected_before_argon (test_phrase_contract.PhraseContractTests) ... ok
+test_fixed_repertoire_equals_official_unicode_data_and_both_sources (test_phrase_contract.PhraseContractTests) ... ok
+test_new_public_phrase_kdf_vectors (test_phrase_contract.PhraseContractTests) ... ok
+test_official_unicode13_normalization_conformance (test_phrase_contract.PhraseContractTests) ... ok
+test_public_normalization_and_invalid_vectors (test_phrase_contract.PhraseContractTests) ... ok
+test_unicode_audit_counterexample_rejected_before_argon (test_phrase_contract.PhraseContractTests) ... ok
+
+----------------------------------------------------------------------
+Ran 46 tests in 3.176s
+
+OK
+test_archive_never_overwrites_existing (test_recovery_kit.RecoveryKitTests) ... ok
+test_duplicate_and_empty_manifest_rejected (test_recovery_kit.RecoveryKitTests) ... ok
+test_existing_venv_work_directory_rejected (test_recovery_kit.RecoveryKitTests) ... ok
+test_extra_file_rejected (test_recovery_kit.RecoveryKitTests) ... ok
+test_failed_check_cli_returns_one (test_recovery_kit.RecoveryKitTests) ... ok
+test_inherited_pip_and_python_paths_removed (test_recovery_kit.RecoveryKitTests) ... ok
+test_manifest_cannot_escape_root (test_recovery_kit.RecoveryKitTests) ... ok
+test_manifest_roundtrip_and_archive (test_recovery_kit.RecoveryKitTests) ... ok
+test_mismatched_download_hash_is_deleted (test_recovery_kit.RecoveryKitTests) ... ok
+test_missing_file_rejected (test_recovery_kit.RecoveryKitTests) ... ok
+test_modified_file_rejected (test_recovery_kit.RecoveryKitTests) ... ok
+test_pin_file_rejects_urls_options_and_unpinned_versions (test_recovery_kit.RecoveryKitTests) ... ok
+test_probe_requires_permission_denial_not_connection_refusal (test_recovery_kit.RecoveryKitTests) ... ok
+test_runtime_download_rejects_untrusted_host (test_recovery_kit.RecoveryKitTests) ... ok
+test_symlink_rejected (test_recovery_kit.RecoveryKitTests) ... ok
+test_transient_download_retry_is_bounded (test_recovery_kit.RecoveryKitTests) ... ok
+test_wrong_platform_and_python_rejected (test_recovery_kit.RecoveryKitTests) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.033s
+
+OK
+test_embedded_integrity_checks (test_web_artifact.WebArtifactTests) ... ok
+test_embedded_wasm_archived_exactly (test_web_artifact.WebArtifactTests) ... ok
+test_hash_csp (test_web_artifact.WebArtifactTests) ... ok
+test_initial_secrets_disabled (test_web_artifact.WebArtifactTests) ... ok
+test_no_connections_or_external_resources (test_web_artifact.WebArtifactTests) ... ok
+test_primary_kit_has_no_native_launcher (test_web_artifact.WebArtifactTests) ... ok
+test_public_vectors_exact (test_web_artifact.WebArtifactTests) ... ok
+test_reproducible_assembly (test_web_artifact.WebArtifactTests) ... ok
+test_self_contained (test_web_artifact.WebArtifactTests) ... ok
+test_vendor_archive_registry_integrity (test_web_artifact.WebArtifactTests) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.053s
+
+OK
+PASS: assembled self-contained RECOVER.html with pinned payloads and hash CSP
+PASS: original master_key/site_key/password
+PASS: Human vectors + self-test
+Case 1: master_key PASS; site_key PASS; password PASS
+Case 2: master_key PASS; site_key PASS; password PASS
+Case 3: master_key PASS; site_key PASS; password PASS
+Case 4: master_key PASS; site_key PASS; password PASS
+Case 5: master_key PASS; site_key PASS; password PASS
+Case 6: master_key PASS; site_key PASS; password PASS
+Case 7: master_key PASS; site_key PASS; password PASS
+Case 8: master_key PASS; site_key PASS; password PASS
+Case 9: master_key PASS; site_key PASS; password PASS
+3310 invalid-input rejection cases PASS; normalization PASS; invalid-code-before-Argon2 PASS
+PASS: nine Python cross-implementation cases and 3310 input rejections
+PASS: public Human Code produces same three outputs
+PASS: capacity/encoding 256 deterministic public roundtrips
+PASS: invalid Human Code before Argon2
+PASS: invalid metadata before Argon2
+PASS: unpaired Unicode scalar rejection
+PASS: NFC preserves case/spaces/no NFKC
+PASS: labels opaque/account case preserved
+PASS: numbers grammar and bounds
+PASS: fixed expected mismatch names failing field
+PASS: empty/wrong-scheme public vectors fail
+PASS: 13/13 Web adapter tests
+PASS: CSPRNG receives exactly 16 bytes; existing encoder/decoder roundtrip; mutable buffer cleared
+PASS: eight transient Web Crypto generations are distinct, checksum-valid and decoder-compatible; no Math.random
+PASS: Show/Hide defaults hidden and preserves exact Unicode, whitespace and case
+PASS: Show/Hide leaves final public KDF password unchanged; clear restores hidden
+PASS: Create NEW is isolated from existing recovery fields and password
+PASS: CSPRNG failure STOPs, clears output and disables both new controls; no weak fallback
+PASS: failed startup keeps Create NEW and Show/Hide disabled
+PASS: new actions and public recovery invoke zero network APIs
+PASS: Travel QR uses same generated code without more randomness; stale QR cleared on replacement
+PASS: QR disabled after STOP and while KDF is busy; zero network calls
+PASS: raw LF/CR/CRLF paste at all positions blocked before KDF, hidden or shown
+PASS: drop/beforeinput/direct value newline rejected; unavailable raw clipboard fails closed
+PASS: ordinary single-line paste remains allowed; Show/Hide preserves public output
+PASS: 13/13 UX tests; no generated secret values logged or persisted
+PASS: independent QR roundtrip: exact canonical code, no prefix/URL/metadata
+PASS: public Human vectors and 32 fixed public secrets independently decode to same 16 bytes
+PASS: H error correction, four-module quiet zone, integer modules, opaque black/white only
+PASS: repeat encoding deterministic without random source or network
+PASS: noncanonical/invalid input rejected before QR or Argon2
+PASS: QR code and manual code preserve all original public KDF outputs
+PASS: production embeds encoder only; no decoder, camera, uploads or storage APIs
+PASS: 7/7 QR tests; public data only
+PASS: valid fixed vectors: exact NFC/UTF8; invalid vectors rejected
+PASS: audit Unicode13/17 divergence now rejected before Argon2
+PASS: LF/CR/CRLF at beginning/middle/end rejected before Argon2
+PASS: all Unicode scalar membership agrees with fixed authoritative repertoire
+PASS: official Unicode13 NFC suite: all 18853 rows, five invariants each
+PASS: all valid new phrase vectors match Python master/site/password outputs
+PASS: fixed input bytes self-test fails on damaged expected/invalid acceptance
+PASS: 7/7 A1/A2 contract groups; public data only
+PASS: 73 Python regression/artifact tests + 13 Web adapter + 13 UX + 7 QR + 7 phrase-contract groups (113 total)

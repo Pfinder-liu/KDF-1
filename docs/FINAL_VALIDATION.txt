@@ -1,0 +1,55 @@
+KDF-1 v1.0 publication validation — 2026-10-07
+
+Scope: frozen artifact packaging, not a new primitive security audit.
+
+Audited artifact preservation: PASS
+RECOVER.html, SPEC.txt, Python/JS core, generator, QR, all reference vectors,
+Unicode repertoire, tests and dependency files are byte-for-byte unchanged.
+RECOVER.html SHA-256:
+91c3fe041e869d71d63ea1b59e405f79692e64e2483f08fa65cfa967a21c9156
+Only original README.md, START_HERE.txt and INTEGRITY.json change for publication.
+All additions are freeze/publication/attribution materials. FREEZE.txt overrides
+historical candidate labels, without rewriting any normative or executable bytes.
+
+Complete extracted-package regression run: 113/113 PASS
+46 Python reference tests + 17 legacy tests + 10 artifact checks,
+13 Web adapter groups + 13 UX groups + 7 QR groups + 7 A1/A2 contract groups.
+Recorded output: EXTRACTED_PACKAGE_TESTS.txt. Final packaging is re-extracted
+and the same full suite rerun after adding this report; the external publication
+report records the final ZIP SHA-256 and results without a self-hash cycle.
+
+All classic master_key/site_key/password fields and nine established KDF cases
+PASS. HRC vectors, normalization, 3310 input rejections, CSPRNG 16-byte
+round-trips, distinct generated codes, Show/Hide and no-network guards PASS.
+Independent QR encode/decode tests PASS; published sample PNG independently
+decodes to exactly the known public Human Recovery Code with no metadata.
+QR error correction H, four-module quiet zone and black/white output unchanged.
+
+A1/A2: fixed repertoire membership exhaustively checked across all Unicode
+code points; PUBLIC\u0897\u0323 consistently rejected before Argon2. All 15
+legal phrase vectors match Python/JS bytes and master/site/password outputs;
+illegal inputs reject consistently. Official Unicode 13 normalization corpus:
+18853 rows, five invariants per row (94265 checks in each implementation) PASS.
+CR/LF/CRLF, positions, raw paste/input guards and Show/Hide regressions PASS.
+
+Actual extracted-package browser check: Apple Silicon Chrome 154, file://.
+Startup SELF TEST PASS; nine public cases' three outputs PASS.
+Chrome DevTools network emulation explicitly set to Offline: local file reload
+self-test PASS, classic derivation PASS. Network panel shows only the local
+file:// RECOVER.html document, no HTTP/HTTPS requests from the calculator.
+No OS network settings were changed; this is browser offline emulation evidence.
+Static CSP/self-contained-resource checks and zero-network API guards also PASS.
+
+Classic public vector remains:
+master_key_hex = d926cadd0ae78d32398709deebcb1ba4e74e8991a973f06d5cef6e3a63dde787
+site_key_hex = 60beb81f4da1e9a96b9f78d26df78ab2203c7a0b702912c22a72268de10a7930
+password = HtO+f3SK@_5w*VwW6ufM@UzA
+
+ZIP extraction/CRC and both internal manifests PASS. Every packaged file is
+covered by INTEGRITY.json except itself; SHA256SUMS excludes itself and that
+JSON to avoid a checksum cycle. External release/SHA256SUMS covers the ZIP.
+These are corruption checks, not a signature or malicious replacement defense.
+
+No new deterministic-recovery/security blocker identified by these checks.
+Cross-platform/manual evidence limits remain in COMPATIBILITY.md; no claim that
+all OS/browser versions or physical paper/QR rehearsals were newly tested.

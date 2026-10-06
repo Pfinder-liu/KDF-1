@@ -1,0 +1,26 @@
+Publication privacy review — 2026-10-07
+
+Scope: the entire prepared public repository and both nested dependency tarballs;
+the final ZIP is extracted and its bytes matched to the reviewed inventory.
+No .git directory or prior commit history is carried into this snapshot.
+
+No private machine paths, private keys, recognized GitHub/OpenAI/AWS credential
+patterns or user account identifiers were found. The package is constructed
+only from the audited public-test project plus publication documents/licenses.
+Review of phrase/code/password fixtures identifies intentionally public vectors,
+not production credentials. No user secrets were requested, loaded or generated.
+
+Travel-QR-PUBLIC-EXAMPLE.png was independently decoded with jsQR and contains
+only the known public Human Recovery Code:
+22222-5R62B-SAJ4K-C8JSR-74S7N-S2FAH-G5
+The public sample is not a usable private recovery secret.
+
+Vendor metadata/source notices contain upstream authors' published emails and
+project URLs. These are retained attribution, not the user's private accounts.
+Generator tests produce ephemeral test-only CSPRNG bytes without logging or
+storing them. No private QR export or real recovery sheet exists in the bundle.
+
+Pattern scans cannot prove that arbitrary unknown bytes never encode a secret.
+The byte-identity check and known public fixture/source review provide the
+additional provenance evidence. Inspect all future changes before committing;
+.gitignore does not protect an arbitrarily named or already tracked secret.

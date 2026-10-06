@@ -1,0 +1,125 @@
+KDF-1 candidate — A1/A2 FIX AND FREEZE RE-AUDIT
+2026-10-07 — CANDIDATE / NOT FROZEN
+
+Scope: only A1 Unicode input determinism and A2 CR/LF. No freeze label applied.
+FREEZE RECOMMENDATION: YES
+No remaining blocker found in this targeted re-audit. This recommendation does
+not change candidate status and is not an independent primitive security audit.
+
+A1 minimal方案 / scheme comparison
+1. ASCII-only: very small, but excludes Chinese and ordinary human languages.
+   Rejected as unnecessarily narrow for this project's recovery goal.
+2. Hand-selected language blocks: compact but risks omitting ordinary languages,
+   admitting unassigned holes, or excluding marks/composites needed for NFC.
+   Rejected because it adds bespoke repertoire and closure decisions.
+3. Fixed Unicode13 assigned-scalar repertoire: CHOSEN. Covers baseline languages,
+   Chinese, common Latin accents/marks and baseline emoji. Source is the official
+   13.0.0 UCD, the same baseline supported by the original Python reference.
+   Exactly 679 sorted inclusive ranges / 281390 scalars after excluding surrogates
+   and CR/LF. Compact ranges, not a normalization runtime/database in the browser.
+
+Normative membership is printed completely in SPEC Appendix MP and mirrored in
+master-phrase-repertoire.json and the reference/core literals. Future implementers
+need no host category lookup, current chat or original source to decide legality.
+Private-use (Co) included; unassigned/noncharacters excluded. Newer assignments
+remain invalid. Validate ORIGINAL input before standard Unicode13 NFC, then UTF8.
+Conformant NFC supporting Unicode13 or later gives the same output for these
+baseline-assigned strings by Unicode normalization stability. No NFKC, stream-safe
+CGJ insertion, trimming, case conversion or repair. Older/nonconformant runtimes
+must fail; a Unicode13-era composition vector is included in browser startup.
+The algorithm has a fixed input contract, not a frozen host/runtime dependency.
+Official UnicodeData13 and NormalizationTest13 are archived for offline audit and
+future implementation, with provenance/hashes/license. Never loaded by HTML.
+
+Audit counterexample PUBLIC\u0897\u0323 is now invalid in both reference and JS
+BEFORE Argon2. No attempt to preserve its previously conflicting passwords.
+Original nine KDF vectors, classic three outputs and four Human vectors unchanged.
+
+A2 implementation
+Python norm and JS textScalar reject LF U+000A / CR U+000D anywhere before NFC,
+UTF8/Argon2. CRLF is rejected, not normalized. Single-line input types retained.
+Web examines raw text/plain clipboard/drop data, plus beforeinput data/linebreak
+intent. Invalid edit is prevented, phrase/password cleared, explicit STOP shown,
+derivation disabled. Rejection remains latched through any host-sanitized input
+completion. Show/Hide does not release it. A subsequent explicit valid raw edit
+allows retry. Missing readable clipboard data fails closed with manual-entry
+instruction. Ordinary paste remains allowed. Programmatically supplied raw API
+values must obey the same contract. The page cannot detect changes made to text
+before it reaches the browser's clipboard event; no claim of OS input isolation.
+
+Validation: 113/113 original+new tests/groups PASS
+- 46 Python reference tests (40 retained + 6 new).
+- 17 retained legacy developer tests.
+- 10 updated artifact/integrity/CSP tests.
+- 13 retained Web adapter groups, including nine vectors/3310 rejection cases.
+- 13 UX groups (10 retained + 3 raw-paste/input/retry groups).
+- 7 retained independent QR groups.
+- 7 new JS contract groups.
+New A1 coverage: legal Chinese/Latin/marks/emoji/supplementary Unicode13 text,
+NFC/already-NFC/equivalent/reordered combinations and UTF8, fixed-vs-new/unassigned
+characters, surrogates, empty input, exact cross-implementation KDF outputs for
+15 fixed legal phrases. JS exhaustively checks membership for all 1114112 code
+points against the authoritative table; reference table independently matches
+all official UnicodeData13 records and SPEC/JSON/JS literals.
+Python (UCD13) and Node (UCD17) each pass all 18853 official NormalizationTest13
+rows with five NFC invariants per row (94265 comparisons per implementation).
+This is finite conformance evidence plus the normalization stability rule, not
+an exhaustive enumeration of infinitely many possible phrases.
+New A2 coverage: CR/LF/CRLF, beginning/middle/end, core before-Argon rejection,
+raw paste hidden/shown, Show/Hide while rejected, sanitized completion, valid
+retry, drop/beforeinput/input defenses, missing clipboard data, ordinary paste.
+
+Real browser evidence (Apple Silicon Mac, native UI, PUBLIC data only)
+Chrome154: file startup SELF TEST PASS; raw LF/CR/CRLF paste STOP and no output;
+shown/hidden path checked; ordinary paste restores input; Show/Hide keeps exact
+classic phrase and original password. Public Unicode counterexample STOP.
+Safari27: file startup PASS; raw CRLF paste STOP; ordinary paste/Show/Hide/classic
+recovery PASS. No camera/scanner or browser permission added.
+No new physical Intel/Windows test in this repair turn. Prior user reports of
+Intel/Apple Silicon/Windows Parallels success and Intel/ARM password equality
+remain valid evidence for the previous candidate; not relabeled as this build's
+physical-device results. No need to expand platform/product scope for this fix.
+
+Unchanged assets/logic
+Existing public-vectors.json, human-vectors.json, developer/public-cases.json,
+reference/human_code.py, travel_qr.js and QR library are byte-identical to the
+pre-fix audit ZIP. JS core from label validation through deriveCode is unchanged:
+Argon2/salt/HMAC/context/revision/password alphabet/sampling/counter encoding
+untouched. Only phrase validation and its contract self-test were changed.
+Create NEW remains crypto.getRandomValues on exactly16 bytes; HRC/checksum/QR
+remain representation-only; offline/CSP/network-trap tests still PASS.
+No new external runtime dependency, service, scanner or installation requirement.
+Classic outputs:
+master_key_hex = d926cadd0ae78d32398709deebcb1ba4e74e8991a973f06d5cef6e3a63dde787
+site_key_hex = 60beb81f4da1e9a96b9f78d26df78ab2203c7a0b702912c22a72268de10a7930
+password = HtO+f3SK@_5w*VwW6ufM@UzA
+
+Failures/root causes resolved
+- Restricted shell could not resolve unicode.org. Official archive/license then
+  downloaded via authorized network tool access; no runtime network dependency.
+- First developer vector-generation command used system Python without argon2:
+  ModuleNotFoundError. Reran with existing reference validation environment.
+- Initial split-out Python repertoire module broke the existing single-file-copy
+  negative-vector test (ModuleNotFoundError). Embedded ranges in original kdf.py;
+  no sidecar runtime dependency. Original test retained and passes.
+No unresolved build/test failure remains.
+
+Changed files
+SPEC.txt, START_HERE.txt, README.md, reference/kdf.py, developer/core.js, ui.js,
+build_web.py, test_web_artifact.py, test_ux.js, validate_web.py, RECOVER.html,
+INTEGRITY.json, VALIDATION.txt and candidate ZIP.
+Added master-phrase-repertoire.json, master-phrase-vectors.json,
+reference/test_phrase_contract.py, developer/test_phrase_contract.js,
+developer/unicode13/{UnicodeData.txt,NormalizationTest.txt,ReadMe.txt,
+PROVENANCE.txt,LICENSE.txt}, this FREEZE_REAUDIT.txt.
+
+Non-blocking / Freeze Evidence / Post-v1: broader secret vectors, detailed
+Windows/Parallels records, physical QR scan and second-computer RTO drill, cosmetic
+and documentation preferences remain outside this A1/A2 repair. No refactor.
+Authoritative long-term assets: SPEC including MP/HRC + fixed public vectors;
+HTML is current reference calculator. Fixed repertoire is fully specified without
+reading source. Keep new input-contract vectors with old vectors when freezing.
+
+Targeted conclusion: A1 and A2 resolved. No new deterministic-input blocker found.
+FREEZE RECOMMENDATION: YES
+STATUS STILL: CANDIDATE / NOT FROZEN

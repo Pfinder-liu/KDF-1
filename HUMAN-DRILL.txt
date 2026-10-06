@@ -1,0 +1,45 @@
+KDF-1 真人人工恢复演练 — PUBLIC TEST ONLY — CANDIDATE / NOT FROZEN
+
+自动测试/同机界面验证不等于这个演练。出现障碍记为 UX TEST FAILED。
+目标：第二台普通电脑，没有原设备，没有网络，不安装开发环境，<=30 分钟。
+
+准备：打印 Recovery-Sheet-PUBLIC-EXAMPLE.txt（足够大的等宽字体）。
+通过 U 盘等保存同一份 Kit，在外地也应能取得。第一台电脑不可参与恢复。
+Intel Mac 是正式验收目标；M 系列 Mac、Windows、Linux 也使用相同文件。
+只用公开测试材料。不要用真实秘密尝试候选版，不要复制粘贴任何输入。
+
+1. 在第二台电脑关闭网络连接，启动计时。不装 Python、包管理器或原生 App。
+2. 打开 START_HERE.txt，双击 RECOVER.html（本地 file:// 文件）。
+3. 等待 SELF TEST PASS。若无 PASS 或出现 STOP，记录完整原因并停止。
+   不搭服务器、不放宽 CSP、不降低 KDF 参数、不绕过浏览器保护来“通过”。
+4. 从打印纸读出并手输 Human Recovery Code，再手输这个 PUBLIC Master Phrase：
+   correct horse battery staple
+   这句话只供公开演练，绝对不要用于真实账户，不印在恢复纸上。
+5. 手输纸上的 example.com / test / revision 1 / length 24，点击恢复。
+6. 目视逐字符核对公开密码：HtO+f3SK@_5w*VwW6ufM@UzA。
+7. 关闭页面，重新打开；故意输错一个码字符，不输入 phrase，点击恢复。
+   应立即提示核对纸张，无密码输出。读纸修正，不猜测。
+8. 记录用时、抄错次数、看不清的字符、求助/不懂步骤和失败根因。
+   只有真人在 30 分钟内、无网络、无复制粘贴、无技术人员帮助恢复出精确
+   密码，才算该设备人因验收 PASS。按 COMPATIBILITY.txt 的记录表登记。
+
+本交付未执行真实第二台电脑打印纸演练；所有未实测设备保持 UNTESTED。
+如软件或 metadata 在外地不可取得，仍然算恢复失败。
+
+Optional Travel QR drill — public data only; separate from the no-paste drill
+1. Print Travel-QR-PUBLIC-EXAMPLE.png at least 45 mm square, retaining white border.
+   Print only the picture, no file name, caption, date, title or browser headers.
+2. Disconnect the second computer and phone from networks. Use the phone's system
+   camera. It must return exactly:
+   22222-5R62B-SAJ4K-C8JSR-74S7N-S2FAH-G5
+   Some camera apps may not offer plain-text copying: test the intended phone now.
+   No browser camera/scanner is provided; the original manual path remains.
+3. Copy the text and paste into RECOVER.html after SELF TEST PASS. Transfer across
+   devices by a locally available route, or type it if offline clipboard transfer
+   is unavailable. QR does not supply the calculator, labels or account records.
+4. Enter public phrase correct horse battery staple, label example.com,
+   account test, revision 1, length 24. Expect HtO+f3SK@_5w*VwW6ufM@UzA.
+5. Compare to the separate manual no-copy/paste drill. Record scanner/browser,
+   print size, time and success. Retry after mild real handling; do not infer
+   multi-year durability from a clean-image automatic decoder test.
+This physical print/phone/second-computer QR drill has not been performed here.

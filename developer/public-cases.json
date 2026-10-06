@@ -1,0 +1,146 @@
+[
+  {
+    "scheme": "KDF-1-v1",
+    "input": {
+      "master_phrase": "correct horse battery staple",
+      "recovery_secret_hex": "000102030405060708090a0b0c0d0e0f",
+      "label": "example.com",
+      "account": "test",
+      "revision": 1,
+      "length": 24
+    },
+    "expected": {
+      "master_key_hex": "d926cadd0ae78d32398709deebcb1ba4e74e8991a973f06d5cef6e3a63dde787",
+      "site_key_hex": "60beb81f4da1e9a96b9f78d26df78ab2203c7a0b702912c22a72268de10a7930",
+      "password": "HtO+f3SK@_5w*VwW6ufM@UzA"
+    }
+  },
+  {
+    "scheme": "KDF-1-v1",
+    "input": {
+      "master_phrase": "correct horse battery staple",
+      "recovery_secret_hex": "000102030405060708090a0b0c0d0e0f",
+      "label": " EXAMPLE.COM ",
+      "account": " test ",
+      "revision": 1,
+      "length": 24
+    },
+    "expected": {
+      "master_key_hex": "d926cadd0ae78d32398709deebcb1ba4e74e8991a973f06d5cef6e3a63dde787",
+      "site_key_hex": "60beb81f4da1e9a96b9f78d26df78ab2203c7a0b702912c22a72268de10a7930",
+      "password": "HtO+f3SK@_5w*VwW6ufM@UzA"
+    }
+  },
+  {
+    "scheme": "KDF-1-v1",
+    "input": {
+      "master_phrase": "café 密码",
+      "recovery_secret_hex": "000102030405060708090a0b0c0d0e0f",
+      "label": "primary-email",
+      "account": "Personal",
+      "revision": 2,
+      "length": 32
+    },
+    "expected": {
+      "master_key_hex": "56eb1b5203c578f43dfe1577f2705c28c543a0bfd2e4b913b257d6f59fdd3001",
+      "site_key_hex": "61931721defb95c66d1ea962587c73450ec2c559a61bd37874a6b5a1d2deec54",
+      "password": "qa_SFqrJg3ws@jWlp9QLOF6Nqm+PERw7"
+    }
+  },
+  {
+    "scheme": "KDF-1-v1",
+    "input": {
+      "master_phrase": "café 密码",
+      "recovery_secret_hex": "000102030405060708090a0b0c0d0e0f",
+      "label": "primary-email",
+      "account": "Personal",
+      "revision": 2,
+      "length": 32
+    },
+    "expected": {
+      "master_key_hex": "56eb1b5203c578f43dfe1577f2705c28c543a0bfd2e4b913b257d6f59fdd3001",
+      "site_key_hex": "61931721defb95c66d1ea962587c73450ec2c559a61bd37874a6b5a1d2deec54",
+      "password": "qa_SFqrJg3ws@jWlp9QLOF6Nqm+PERw7"
+    }
+  },
+  {
+    "scheme": "KDF-1-v1",
+    "input": {
+      "master_phrase": " correct horse battery staple ",
+      "recovery_secret_hex": "000102030405060708090a0b0c0d0e0f",
+      "label": "apple-root",
+      "account": "",
+      "revision": 4294967295,
+      "length": 8
+    },
+    "expected": {
+      "master_key_hex": "2e2ef2fa1c996fba66e21b2552c29a2a7bd844925926b83a3a8983173b32f889",
+      "site_key_hex": "1c3c884549fdd5e52a47b69e8995b692146946640dec81c4a1c8a10d7e0f2879",
+      "password": "G=x5Ed*S"
+    }
+  },
+  {
+    "scheme": "KDF-1-v1",
+    "input": {
+      "master_phrase": "Ａ",
+      "recovery_secret_hex": "000102030405060708090a0b0c0d0e0f",
+      "label": "a",
+      "account": "personal",
+      "revision": 1,
+      "length": 1024
+    },
+    "expected": {
+      "master_key_hex": "ee92011170d76ca6cc30ca7270e30f0c8cb8040e47aa1a5d96ca0f79dffed93f",
+      "site_key_hex": "a6494af1a4e09b8622c8b905dd885cbce455b9b71f77c47410918188e9de2d40",
+      "password": "7D#wRlZZ80x#L@UsDNQkO7!*f_*%CP&f6nHen9Nz!GSoOZ+PpTGb#ey+ZMoPR&TUrQyP7F#bQn_WE45tcBz^b%VHYkD%=cKrvqkqKTbBF7l!ZR$YUe&E07XO5mvF$loYj%ljT9gvO5JQDp_J^gl29gnGuL_aQLwhfCv98GP8HbBX@iWfh=aqmM%p!+@Uy@V+OWRjwL5mT^p&sBR+4vkOf-m4Yr6Kss0z9JQtcssk^03mUn!*POW#=-bmvcvU=^V8PxfxwR@FL%5BU04ggb5PuT_MQk$O60X%lwk_TwSrD2Sj=keARIT6VE1lLEfUiCSK!^2Nyay9xVW@Iw6r$QMn1w@X7dr3CQqCQ_tI0IqWK@a==Wh1FpDPsPzS9!&lt!=TqtEPLK8lQ=f#E59p0UNthGtNIHCVjy%VgblOUvu&CFdKpwU#$@T55R4fgwXU=5b4iXI5uwh7w*hM&nK5ksiWuV=NE4+jv8Cpi!yE8*b_rRITweR_k6_949rqVd5psQ*+nvTdqnE*t_vgEBr0e@=2Tu$W53UgMJ6Pve=XSff%QBLZ^-7PnJ0GJikhQXDeRP-yW$8o0C&Co=&j%OBeQRQD7yL+z4^1kD-0nH_Fzqj=ptg^itOhJ=B9nbfxl#2ti$&9Z%yByU*cYcX%!vV7v3-CAp#1_e$K3-O6K8rVdkF7M*9jJBRRGaY2K85$wiw**9g#49D1p9-+W*ypoj2mDE!RKFgy55_VZ%Hn^QTecsihivzoJBgQGzj2m@LaGapnzI!b0biBV1_N4Q2#dJmOP@gOOd=fghj3icnrUeGX8*g4uo3g5=K3MDfBKgTxmeUAz2u3!aj++D4jh!h@s!RyGqo!n8wpkzBsk_iAxikkL7Y$95gxP_Q*uikeo&l_2AH!4LgP4kZK%elISY6v#+Lx_v=*d1_%^zc54*E0h$R8XHrH9WGz**k4UUp-H%@7fIHeYAdinCz9tAT-68mMzE0U%!3Rj4VM&EzA&&7lFia=6xNm7&_C8r$mMaGV6+V50JI8t1OE"
+    }
+  },
+  {
+    "scheme": "KDF-1-v1",
+    "input": {
+      "master_phrase": "A",
+      "recovery_secret_hex": "000102030405060708090a0b0c0d0e0f",
+      "label": "a",
+      "account": "Personal",
+      "revision": 1,
+      "length": 24
+    },
+    "expected": {
+      "master_key_hex": "5e730038f06bf1cfdb1be9ba85e70e212639741e8306eb210c8e203b91f20eab",
+      "site_key_hex": "ee408dbf627e12860ea95fa7c2dcb1e8916526ae22d7f136520d864e311d30a6",
+      "password": "jjCT$rK@VdGAHaD$8m8+op8%"
+    }
+  },
+  {
+    "scheme": "KDF-1-v1",
+    "input": {
+      "master_phrase": "public\tphrase",
+      "recovery_secret_hex": "000102030405060708090a0b0c0d0e0f",
+      "label": "example.org",
+      "account": "test",
+      "revision": 1,
+      "length": 24
+    },
+    "expected": {
+      "master_key_hex": "56787f11f507f6b09ea7eceb79ba8135a93eb6a652d73483c508b04a284f8b02",
+      "site_key_hex": "02e57c792e92ea89d3aea4f3aa657bead7c2169e48ec2517c25e12ff75563752",
+      "password": "igk2EHG=kN+7zmm&9NQUIMs1"
+    }
+  },
+  {
+    "scheme": "KDF-1-v1",
+    "input": {
+      "master_phrase": "correct horse battery staple",
+      "recovery_secret_hex": "000102030405060708090a0b0c0d0e0f",
+      "label": "example.com",
+      "account": "test",
+      "revision": 2,
+      "length": 24
+    },
+    "expected": {
+      "master_key_hex": "d926cadd0ae78d32398709deebcb1ba4e74e8991a973f06d5cef6e3a63dde787",
+      "site_key_hex": "5635a374b4f73f1bb53a4d3345484b58ae17e1aab1859c6e3b14d0c7b063af38",
+      "password": "n9m2YPSPTz26Dgr9Q!TrtnFs"
+    }
+  }
+]

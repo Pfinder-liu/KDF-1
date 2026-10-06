@@ -1,0 +1,16 @@
+Runtime encoder: Nayuki QR Code generator v1.8.0, MIT.
+Official source: https://github.com/nayuki/QR-Code-generator/tree/v1.8.0
+Downloaded qrcodegen.ts from official tagged typescript-javascript source.
+TS source SHA256: c4749095a91bf9696e3a303998b9905e467094f53041e64393e65e6d887737fd
+JS SHA256: 6e200897a80ff15a652a5d601667856d807cec60cfc81a3a351305d69cc9dbbd
+Compiled with TypeScript 5.7.3 transpileModule, target ES2017, module None,
+comments preserved. Compiler obtained from npm and registry SHA512 verified.
+No compiler or package installation is needed to run RECOVER.html.
+Full encoder MIT license remains at the top of TS and JS sources.
+
+Independent developer-only decoder: jsQR 1.4.0, MIT.
+Source https://github.com/cozmo/jsQR
+npm registry metadata + verified tarball retained; dist/jsQR.js copied verbatim.
+License: jsQR-LICENSE.txt. Decoder is NEVER embedded in RECOVER.html.
+No browser scanning/camera feature is provided.
+All dependency downloads were development-time only. Runtime is fully local.

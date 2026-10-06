@@ -1,0 +1,18 @@
+[
+  {
+    "secret_hex": "000102030405060708090a0b0c0d0e0f",
+    "code": "22222-5R62B-SAJ4K-C8JSR-74S7N-S2FAH-G5"
+  },
+  {
+    "secret_hex": "00000000000000000000000000000000",
+    "code": "22222-22222-22222-22222-22222-22222-22"
+  },
+  {
+    "secret_hex": "ffffffffffffffffffffffffffffffff",
+    "code": "22MCR-GMBQH-F3M7P-32S9H-SHS47-D5PCH-PC"
+  },
+  {
+    "secret_hex": "80000000000000000000000000000000",
+    "code": "22B7D-9B6RN-MEQ4R-2EDHN-SNSF4-KFR7A-RH"
+  }
+]

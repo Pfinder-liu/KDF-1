@@ -1,0 +1,231 @@
+[
+  {
+    "valid": true,
+    "input": "correct horse battery staple",
+    "nfc": "correct horse battery staple",
+    "utf8_hex": "636f727265637420686f727365206261747465727920737461706c65",
+    "expected": {
+      "master_key_hex": "d926cadd0ae78d32398709deebcb1ba4e74e8991a973f06d5cef6e3a63dde787",
+      "site_key_hex": "60beb81f4da1e9a96b9f78d26df78ab2203c7a0b702912c22a72268de10a7930",
+      "password": "HtO+f3SK@_5w*VwW6ufM@UzA"
+    }
+  },
+  {
+    "valid": true,
+    "input": "\u4e2d\u6587\u8bb0\u5fc6\u77ed\u8bed",
+    "nfc": "\u4e2d\u6587\u8bb0\u5fc6\u77ed\u8bed",
+    "utf8_hex": "e4b8ade69687e8aeb0e5bf86e79fade8afad",
+    "expected": {
+      "master_key_hex": "a7ac3bb38c0ec351e71d324ea7a29488de076994c57b161f7f05f52ee1cb08ab",
+      "site_key_hex": "07e115af9564c70a50b2cc36dab2a1acce9343e70c10bc4f177b0980cbb6bfac",
+      "password": "MrWpPMPvum5%#LiFx7_CMx4V"
+    }
+  },
+  {
+    "valid": true,
+    "input": "caf\u00e9 \u5bc6\u7801",
+    "nfc": "caf\u00e9 \u5bc6\u7801",
+    "utf8_hex": "636166c3a920e5af86e7a081",
+    "expected": {
+      "master_key_hex": "56eb1b5203c578f43dfe1577f2705c28c543a0bfd2e4b913b257d6f59fdd3001",
+      "site_key_hex": "1c0a754a6fddbb60f7cc0d3a0e4a123b02325359fbbf2a79e6a5add5b01d7ccc",
+      "password": "NPBVVIK+zx^e^aoKbzeqy0v2"
+    }
+  },
+  {
+    "valid": true,
+    "input": "cafe\u0301 \u5bc6\u7801",
+    "nfc": "caf\u00e9 \u5bc6\u7801",
+    "utf8_hex": "636166c3a920e5af86e7a081",
+    "expected": {
+      "master_key_hex": "56eb1b5203c578f43dfe1577f2705c28c543a0bfd2e4b913b257d6f59fdd3001",
+      "site_key_hex": "1c0a754a6fddbb60f7cc0d3a0e4a123b02325359fbbf2a79e6a5add5b01d7ccc",
+      "password": "NPBVVIK+zx^e^aoKbzeqy0v2"
+    }
+  },
+  {
+    "valid": true,
+    "input": "a\u0315\u0300",
+    "nfc": "\u00e0\u0315",
+    "utf8_hex": "c3a0cc95",
+    "expected": {
+      "master_key_hex": "460c4e62c031ac49f217addb29cd4559a316c09dd75265fca50fcfffb2e47f05",
+      "site_key_hex": "1e292021cdf26fc919be2323ff6ec838206960271e3aed0a6f45aa1f37f16bf4",
+      "password": "5fYn^b7SCMyt5UdeDFhG0wZo"
+    }
+  },
+  {
+    "valid": true,
+    "input": "a\u0300\u0315",
+    "nfc": "\u00e0\u0315",
+    "utf8_hex": "c3a0cc95",
+    "expected": {
+      "master_key_hex": "460c4e62c031ac49f217addb29cd4559a316c09dd75265fca50fcfffb2e47f05",
+      "site_key_hex": "1e292021cdf26fc919be2323ff6ec838206960271e3aed0a6f45aa1f37f16bf4",
+      "password": "5fYn^b7SCMyt5UdeDFhG0wZo"
+    }
+  },
+  {
+    "valid": true,
+    "input": "\u00c5",
+    "nfc": "\u00c5",
+    "utf8_hex": "c385",
+    "expected": {
+      "master_key_hex": "f02667a0dfe3760a09e5f20e9cea9b8538eb04f6bb36d8048ff96943ad22f4ec",
+      "site_key_hex": "ae218a089bd339af524b0deff441fee39f65bd77830993b581025ac06ecc6909",
+      "password": "egKRlXF5CtjxMufkV=YQrliz"
+    }
+  },
+  {
+    "valid": true,
+    "input": "A\u030a",
+    "nfc": "\u00c5",
+    "utf8_hex": "c385",
+    "expected": {
+      "master_key_hex": "f02667a0dfe3760a09e5f20e9cea9b8538eb04f6bb36d8048ff96943ad22f4ec",
+      "site_key_hex": "ae218a089bd339af524b0deff441fee39f65bd77830993b581025ac06ecc6909",
+      "password": "egKRlXF5CtjxMufkV=YQrliz"
+    }
+  },
+  {
+    "valid": true,
+    "input": "\ud55c\uae00",
+    "nfc": "\ud55c\uae00",
+    "utf8_hex": "ed959ceab880",
+    "expected": {
+      "master_key_hex": "7d4bc5c2ce4ace4b9b81ae340d76ae72ec98bb9c7690f40a80a95d0ca1e730f5",
+      "site_key_hex": "ae6d257b2a531f9b285693b57a9b6c2eab589eab14baa6ab568fbfab42908c75",
+      "password": "m-KPlNBHi9wd*k1t@QPN!JcM"
+    }
+  },
+  {
+    "valid": true,
+    "input": "\u1100\u1161",
+    "nfc": "\uac00",
+    "utf8_hex": "eab080",
+    "expected": {
+      "master_key_hex": "58171aae87055e2702630811439d42c5679a50609d1555bacd23be0ec2917ffd",
+      "site_key_hex": "a4cfba51d7225544ff3dbfb6fc5c39462b224f374d06aa91dba0f923a6e01d39",
+      "password": "zx42**79Be0ZLIoA6f_FUkhS"
+    }
+  },
+  {
+    "valid": true,
+    "input": " PUBLIC caf\u00e9  ",
+    "nfc": " PUBLIC caf\u00e9  ",
+    "utf8_hex": "205055424c494320636166c3a92020",
+    "expected": {
+      "master_key_hex": "f410eb29d9c4f51ead704c57db532a960d1bc2ac4af9772fbba7706bf582bd09",
+      "site_key_hex": "d28fb4a65543698c190b53e4873b6b8968de7491e02f95df03f46d364701ea96",
+      "password": "B_*ZDHw_VEvqbRUdJ6xeasCL"
+    }
+  },
+  {
+    "valid": true,
+    "input": "\uff21",
+    "nfc": "\uff21",
+    "utf8_hex": "efbca1",
+    "expected": {
+      "master_key_hex": "ee92011170d76ca6cc30ca7270e30f0c8cb8040e47aa1a5d96ca0f79dffed93f",
+      "site_key_hex": "cc77aa86e0df5a95c156010217314b9b493a6452f0997417c044b8ac2e096202",
+      "password": "!zfK6+XaLlfB2NDi$1OyH-hq"
+    }
+  },
+  {
+    "valid": true,
+    "input": "\ud83d\ude42",
+    "nfc": "\ud83d\ude42",
+    "utf8_hex": "f09f9982",
+    "expected": {
+      "master_key_hex": "c57c2c409b8f2baa0fff2a3fdf253d410543344e1eebb3c69147e437cf27612e",
+      "site_key_hex": "95e08e61e1529703d613cab3917d33066caf84b4231f01dc6cba202e2d811e57",
+      "password": "m#MLYI#2%1w%DvDlDraGutvV"
+    }
+  },
+  {
+    "valid": true,
+    "input": "\ud806\udd35\ud806\udd30",
+    "nfc": "\ud806\udd38",
+    "utf8_hex": "f091a4b8",
+    "expected": {
+      "master_key_hex": "025f5ac883d1f308426999ea5a301ffe6c7a0dc69c6922aa83f9463dc63c7f71",
+      "site_key_hex": "17417d4e931f47a09b77fd2e4853cd0075aa845255bc8cb784c9ffa5b73be8ec",
+      "password": "QjYoXP8+yEg*4cnS$*v8^RHt"
+    }
+  },
+  {
+    "valid": true,
+    "input": "public\tphrase",
+    "nfc": "public\tphrase",
+    "utf8_hex": "7075626c696309706872617365",
+    "expected": {
+      "master_key_hex": "56787f11f507f6b09ea7eceb79ba8135a93eb6a652d73483c508b04a284f8b02",
+      "site_key_hex": "b9b78dc58d0a00aca182fec4f9f40cec0effbe5589a1e790ebf91bb591c8b96a",
+      "password": "3B-0IRdB#h+8lk5n3^YDySzv"
+    }
+  },
+  {
+    "valid": false,
+    "input": "PUBLIC\u0897\u0323"
+  },
+  {
+    "valid": false,
+    "input": "PUBLIC\u0378"
+  },
+  {
+    "valid": false,
+    "input": "\ud83e\udee0"
+  },
+  {
+    "valid": false,
+    "input": "\ud800"
+  },
+  {
+    "valid": false,
+    "input": "\udc00"
+  },
+  {
+    "valid": false,
+    "input": "\ud803\udfffF"
+  },
+  {
+    "valid": false,
+    "input": ""
+  },
+  {
+    "valid": false,
+    "input": "PUBLIC\nphrase"
+  },
+  {
+    "valid": false,
+    "input": "PUBLIC\rphrase"
+  },
+  {
+    "valid": false,
+    "input": "PUBLIC\r\nphrase"
+  },
+  {
+    "valid": false,
+    "input": "\nPUBLIC"
+  },
+  {
+    "valid": false,
+    "input": "PUBLIC\n"
+  },
+  {
+    "valid": false,
+    "input": "\rPUBLIC"
+  },
+  {
+    "valid": false,
+    "input": "PUBLIC\r"
+  },
+  {
+    "valid": false,
+    "input": "\r\nPUBLIC"
+  },
+  {
+    "valid": false,
+    "input": "PUBLIC\r\n"
+  }
+]

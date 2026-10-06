@@ -1,0 +1,15 @@
+KDF-1 / HRC-1 — PUBLIC TEST ONLY — NEVER USE FOR A REAL ACCOUNT
+CANDIDATE / NOT FROZEN
+
+Recovery Code:
+22222-5R62B-SAJ4K-C8JSR-74S7N-S2FAH-G5
+
+Permanent label: example.com
+Account alias: test
+Revision: 1
+Password length: 24
+
+Keep your Master Phrase separately; never write it on this sheet.
+This is public test material, not an enrollment sheet for a real account.
+A travel copy can omit identity and metadata if metadata is separately accessible.
+Preserve the exact metadata elsewhere; it affects the password.

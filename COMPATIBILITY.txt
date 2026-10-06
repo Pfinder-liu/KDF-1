@@ -1,0 +1,96 @@
+Anonymous Travel QR increment — 2026-10-07, candidate / NOT FROZEN
+Same offline HTML for all platforms; no CPU-specific QR component.
+Apple Silicon Mac: Chrome 154 and Safari 27 local file startup SELF TEST PASS,
+fixed-public Create NEW -> Travel QR renders with export/print buttons enabled.
+Chrome actual exported 492x492 PNG independently decoded; no text/EXIF metadata.
+Chrome QR-only print preview: one page, only QR after headers/footers disabled.
+Safari PNG download/print and physical phone scanning not separately tested.
+Intel + Apple Silicon password equivalence was reported by user before this
+increment. No KDF/core/vector bytes changed. This QR increment was not rerun on
+Intel, Windows or Linux hardware. Do not interpret unchanged-core conformance as
+new physical platform testing. Original platform evidence follows.
+
+UX revision note — 2026-10-07:
+Chrome/Safari on the recorded Apple Silicon host: updated file:// self-test and
+public recovery after Show/Hide PASS. User reports Intel Mac prior Web self-test
+PASS; browser/version unspecified. New UX on Intel/Windows/Linux not independently
+verified here. No CPU-specific dependency was added.
+
+KDF-1 LOCAL WEB CALCULATOR — BROWSER ACCEPTANCE — 2026-10-07
+CANDIDATE / NOT FROZEN
+
+Intel Mac is a FORMAL acceptance target. The earlier ARM64-native launch failure
+on Intel Mac is UX TEST FAILED. Architecture-specific app is no longer the main
+entrance. Every listed target gets the SAME self-contained RECOVER.html bytes.
+
+Observed host: macOS 26.7.1 (25G241), Apple Silicon ARM64.
+Installed browser versions read from local app Info.plist.
+Opening method: new normal browser tab; direct file:///.../RECOVER.html, no server.
+Public inputs only. Browser tests performed via native UI automation.
+
+Target                  OS / browser version             Local-file evidence
+Apple Silicon Chrome    macOS 26.7.1 / 154.0.8037.98       PASS (details below)
+Apple Silicon Safari    macOS 26.7.1 / 27.0               PASS (details below)
+Intel Mac Chrome        UNTESTED / version unavailable   UNTESTED
+Intel Mac Safari        UNTESTED / version unavailable   UNTESTED
+Windows Edge            UNTESTED / version unavailable   UNTESTED
+Windows Chrome          UNTESTED / version unavailable   UNTESTED
+Linux Firefox           UNTESTED / version unavailable   UNTESTED
+Linux Chrome            UNTESTED / version unavailable   UNTESTED
+Windows/Linux CPU and OS versions must be recorded on actual test devices.
+Apple Silicon results are NOT proof of Intel/Windows/Linux compatibility.
+
+For both tested browsers:
+- file:// opening, embedded WASM compilation under hash CSP and Web Crypto PASS.
+- Final HTML copied ALONE into an empty directory with spaces: startup and exact
+  public recovery PASS, without adjacent source/vector/dependency files.
+- Startup integrity + three original KDF outputs + four Human Code vectors PASS.
+- UI public recovery: example.com / test / revision 1 / length 24 produced
+  HtO+f3SK@_5w*VwW6ufM@UzA.
+- Nine Python-derived cases compared master_key, site_key, password individually:
+  all PASS. Public normalization and 3310 invalid-input cases PASS.
+- Bad checksum UI input, before entering phrase, rejected with paper-check message.
+- Negative public test fixtures: damaged vector, changed core script, changed CSS
+  all STOP with disabled secret fields. No late asynchronous PASS unlocks STOP.
+- Removing wasm-unsafe-eval from test fixture CSP prevents compilation and STOPs.
+- A developer-only same-policy fixture attempted a PUBLIC example.invalid request.
+  securitypolicyviolation reported connect-src and UI displayed the blocked probe.
+  This fetch is ONLY in generated developer fixture, not delivered Calculator.
+
+Physical network disconnection: UNTESTED on every row.
+Second-computer printed-paper/no-copy-paste human recovery: UNTESTED on every row.
+Browser automated public input is not a measured <=30-minute human recovery drill.
+Intel Mac physical device was unavailable in this session; no emulation/Rosetta
+result is presented as Intel hardware PASS. No Windows/Linux host was available.
+
+External device test plan (same kit/file on every target):
+1. Record exact OS, CPU architecture, browser name/version and kit checksum/revision
+   for the developer report; emergency user does no manual hash step.
+2. Disconnect the test computer; open RECOVER.html by double-click/Open With or
+   browser File > Open File. Confirm address uses file://, not HTTP/remote website.
+3. Confirm SELF TEST PASS and fields enabled only afterward. Record startup seconds.
+4. Perform HUMAN-DRILL.txt with PRINTED PUBLIC sheet, no copied/pasted fields or
+   developer setup. Record exact recovered password and total minutes.
+5. Run the optional public verification button; record all three fields for all
+   nine cases and the invalid-input report. This is conformance, not the human drill.
+6. Developer only: generate probes via make_browser_probes.py before disconnecting;
+   open damaged-vector/core/style and blocked-wasm fixtures and confirm STOP.
+   Open connection-probe fixture and confirm connect-src security violation.
+7. Record OS/browser block or failure root cause verbatim. Do not work around with
+   local servers, CSP weakening, weaker KDF, developer setup or native CPU variants.
+
+Record template:
+Date/local timezone:
+Computer / CPU architecture:
+OS version/build:
+Browser/version:
+Kit / RECOVER.html SHA256 (developer record only):
+file:// open method:
+Startup self-test (PASS / STOP + exact cause / time):
+master_key / site_key / password vector comparisons:
+Bad-code / damaged-code / damaged-data / damaged-style / denied-WASM result:
+CSP connect-src probe result:
+Physical network disconnected (yes/no):
+Second-computer printed-paper/no-copy-paste drill (PASS / FAILED / UNTESTED):
+Total recovery minutes / manual typos / help required:
+Notes / blockers:
